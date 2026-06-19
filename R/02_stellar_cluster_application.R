@@ -15,6 +15,8 @@
 # ID_CL_PAPER and group_final.
 # ============================================================================
 
+stars <- readRDS("data/processed/stars_with_extinction.rds")
+
 if (!exists("project_root", mode = "function")) {
   project_root <- function() {
     root <- Sys.getenv("PROJECT_ROOT", unset = getwd())
