@@ -18,8 +18,12 @@ The empirical application investigates the association between the spatial inten
 │   └── 03_fixedK_consistency.R
 │
 ├── data/
-│   └── processed/
-│       ├── stars_with_extinction.rds
+│   ├── processed/
+│   │   ├── README.md
+│   │   └── stars_with_extinction.rds
+│   │
+│   └── results/
+│       ├── README.md
 │       └── simulation_summary_tables.RData
 │
 ├── .gitignore
@@ -63,7 +67,7 @@ This script contains the simulation code supporting the fixed-(K) consistency an
 
 It evaluates the empirical behaviour of the estimator as the expected number of events increases and compares the oracle score-field specification with the interpolated score-field specification.
 
-## Data
+## Processed application data
 
 ### `data/processed/stars_with_extinction.rds`
 
@@ -81,11 +85,23 @@ The dataset includes the following variables:
 
 The coordinates stored as `X`, `Y`, and `Z` correspond to the original variables `X1`, `Y1`, and `Z1` in the source star-level dataset.
 
-### `data/processed/simulation_summary_tables.RData`
+Further information on this dataset is provided in `data/processed/README.md`.
+
+## Simulation results
+
+### `data/results/simulation_summary_tables.RData`
 
 This file contains the tabular summaries of the simulation results used to produce the tables and figures reported in the manuscript.
 
-It includes only data-frame-like objects and excludes functions, fitted model objects, intermediate workspace objects, and other session-specific quantities.
+It includes data-frame-like objects only and excludes source functions, fitted model objects, intermediate workspace objects, and raw replicate-level simulation outputs.
+
+The complete simulation workflow is provided in:
+
+```text
+R/01_simulation_study.R
+```
+
+Further information on the stored results is provided in `data/results/README.md`.
 
 ## Requirements
 
